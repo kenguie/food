@@ -1,0 +1,29 @@
+<h1>Listing all posts</h1>
+
+  <ul>
+    <% @posts.each do |post| %>
+      
+        <li class="post"><%= post.body %>  |  <%= post.user.fname %></li> 
+        <li class="links"><%= link_to 'Show', post %>  |  
+        <%= link_to 'Edit', edit_post_path(post) %>  |  
+        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        
+        <% post.comments.each do |comment| %>
+        
+          <% if comment.post.id == post.id %>       <!-- Comment.find(32).user.fname -->
+            <li class="comment"> <%= comment.body %> | by <%= comment.user.fname %>  <br/> </li> 
+          <% else %>
+
+          <% end %>
+        <% end %>   
+    <% end %>
+  </ul>
+
+
+
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>
+
+<%= link_to "User's Post", @post %> 
