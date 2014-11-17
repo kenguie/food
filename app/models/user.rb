@@ -2,7 +2,12 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable#, :validatable
+         :recoverable, :rememberable, :trackable #, :validatable
+
+  validates_presence_of :restname, message: "Restaurant Name cannot be blank."
+  validates_presence_of :reststreet, message: "Restaurant Street Address cannot be blank."
+  validates_presence_of :restcity, message: "Restaurant City cannot be blank."
+  validates_presence_of :reststate, message: "Restaurant State cannot be blank."
 
   	has_many :posts
   	has_many :comments

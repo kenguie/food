@@ -1,9 +1,9 @@
-<h1>Listing all posts</h1>
+<h1>History of Questions asked and Comments made</h1>
 
   <ul>
     <% @posts.each do |post| %>
       
-        <li class="post"><%= post.body %>  |  <%= post.user.fname %></li> 
+        <li class="post"><%= post.body %>  |  <%= post.user.fname %> from <%= post.user.restname %> in <%= post.user.restcity %>, <%= post.user.reststate %></li> 
         <li class="links"><%= link_to 'Show', post %>  |  
         <%= link_to 'Edit', edit_post_path(post) %>  |  
         <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></li>
@@ -11,7 +11,7 @@
         <% post.comments.each do |comment| %>
         
           <% if comment.post.id == post.id %>       <!-- Comment.find(32).user.fname -->
-            <li class="comment"> <%= comment.body %> | by <%= comment.user.fname %>  <br/> </li> 
+            <li class="comment"> <%= comment.body %> | by <%= comment.user.fname %> from <%= comment.user.restname %> in <%= comment.user.restcity %>, <%= comment.user.reststate %>  <br/> </li> 
           <% else %>
 
           <% end %>
@@ -27,3 +27,5 @@
 <%= link_to 'New Post', new_post_path %>
 
 <%= link_to "User's Post", @post %> 
+
+<%= link_to 'Home Page', root_path %>

@@ -1,16 +1,29 @@
-<h1>show</h1>
+<h1><%= @post.user.fname %>'s Question from <%= @post.user.restname %> in <%= @post.user.restcity %>, <%= @post.user.reststate %></h1>
 
 <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Body:</strong>
-  <%= @post.body %>
+  <%= @post.body %> 
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @post.user.fname %>
-</p>
+<p> Comments: </p>
+<% @post.comments.each do |comment| %>
+        
+  <% if comment.post.id == @post.id %>   
+    <li class="comment"> <%= comment.body %> 
+    | by <%= comment.user.fname %> from <%= comment.user.restname %> in <%= comment.user.restcity %>, <%= comment.user.reststate %> <br/> </li> 
+  <% else %>
+
+  <% end %>
+<% end %>   
+
+<!-- <h3> Following </h3>
+  <ul>
+
+  </ul>
+<br/> -->
+
 
 <%if current_user && @post.user != current_user %>
   <% if current_user.followeds.include? @post.user %>

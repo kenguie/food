@@ -65,7 +65,7 @@
 
 body {
 	background-color: rgb(221, 235, 235);
-	width: 950px;
+	width: 1200px;
 	margin: 0 auto;
 	margin-top: 50px;
 	margin-bottom: 50px;
@@ -88,3 +88,28 @@ body {
 	margin-bottom: 10px;
 	font-size: 1.0em;
 }
+
+/*------------ sign up form ---------------*/
+
+
+.leftform {
+	display: inline-block;
+	width: 49%;
+	float:left;
+}
+
+.rightform {
+	width: 49%;
+	float:left;
+}
+
+/*------------- Update Form ---------------*/
+
+#cancel {
+	padding-top: 30px;
+	clear: both;
+}
+
+
+
+

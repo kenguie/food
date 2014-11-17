@@ -1,10 +1,20 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Edit <%= resource_name.to_s.humanize %> Information</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
+  <div class="leftform">
+  <div><%= f.label :username %><br />
+    <%= f.text_field :username, autofocus: true %></div>
+  
+  <div><%= f.label :fname, 'First Name' %><br />
+    <%= f.text_field :fname %></div>
+
+  <div><%= f.label :lname, "Last Name" %><br />
+    <%= f.text_field :lname %></div>
+
   <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+    <%= f.email_field :email %></div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
@@ -18,12 +28,37 @@
 
   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %></div>
+  </div>
+
+  <div class="rightform">
+  <div><%= f.label :restname, "Restaurant Name" %><br />
+    <%= f.text_field :restname %></div>
+
+  <div><%= f.label :reststreet, "Restaurant Address" %><br />
+    <%= f.text_field :reststreet %></div>
+
+  <div><%= f.label :restcity, "City" %><br />
+    <%= f.text_field :restcity %></div>
+
+  <div><%= f.label :reststate, "State" %><br />
+    <%= f.text_field :reststate %></div>
+
+  <div><%= f.label :restzip, "Zip Code" %><br />
+    <%= f.text_field :restzip %></div>
+
+  <div><%= f.label :restphone, "Phone Number" %><br />
+    <%= f.text_field :restphone %></div>
 
   <div><%= f.submit "Update" %></div>
+  </div> 
+
 <% end %>
 
+<div id="cancel">
 <h3>Cancel my account</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p>Unhappy with our service? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+</div>
 
 <%= link_to "Back", :back %>
+
