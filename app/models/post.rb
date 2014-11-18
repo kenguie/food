@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   belongs_to :user
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
 	has_many :relationships, foreign_key: "follower_id", class_name: "Relationship", dependent: :destroy
   	has_many :followeds, through: :relationships

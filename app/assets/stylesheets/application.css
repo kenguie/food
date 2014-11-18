@@ -110,6 +110,33 @@ body {
 	clear: both;
 }
 
+/*-------------- Biz Page -----------------*/
+
+.leftbox {
+	border: 1px solid black;
+	display: inline-block;
+	height: 800px;
+	width: 59%;
+}
+
+
+.rightbox {
+	width: 40%;
+	display: inline-block;
+	float: right;
+}
+
+.info {
+	border: 1px solid black;
+	height: 398px;
+}
+
+.map {
+	border: 1px solid black;
+	height: 398px;
+}
+
+
 
 
 
