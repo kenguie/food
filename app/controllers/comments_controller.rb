@@ -19,8 +19,7 @@ class CommentsController < ApplicationController
 		@comment.user_id = current_user.id
 
 		if @comment.save
-			flash[:notice] = "Comment Created!"
-			redirect_to posts_path
+			redirect_to post_path(@post)
 		else
 			flash[:alert] = "There was a problem with your comment."
 			render :new
