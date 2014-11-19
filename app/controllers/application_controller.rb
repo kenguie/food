@@ -8,7 +8,8 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-  	devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :fname, :lname, :password, :location, :restname, :reststreet, :restcity, :reststate, :restzip, :restphone, :latitude, :longitude) }
+  	devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :fname, :lname, :password, :password_confirmation, :current_password, :location, :restname, :reststreet, :restcity, :reststate, :restzip, :restphone, :latitude, :longitude, :avatar, :avatar_file_name, :avatar_content_type, :avatar_file_size, :avatar_updated_at) }
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:username, :email, :fname, :lname, :password, :password_confirmation, :current_password, :location, :restname, :reststreet, :restcity, :reststate, :restzip, :restphone, :latitude, :longitude, :avatar, :avatar_file_name, :avatar_content_type, :avatar_file_size, :avatar_updated_at) }
   end
 
 end
