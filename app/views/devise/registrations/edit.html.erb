@@ -28,6 +28,7 @@
 
   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %></div>
+
   </div>
 
   <div class="rightform">
@@ -48,6 +49,11 @@
 
   <div><%= f.label :restphone, "Phone Number" %><br />
     <%= f.text_field :restphone %></div>
+
+  <div class="pic">
+      <%= f.label :avatar, "Add a picture of your restaurant." %> <br/>
+      <%= f.file_field :avatar %>
+  </div>
 
   <div><%= f.submit "Update" %></div>
   </div> 

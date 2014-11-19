@@ -2,7 +2,7 @@
 
 <p> Please take a moment to fill out this form and become a member of the site. There is no charge and you'll be able to make posts to help others and read the columns on advice you may need. Thanks! Have a great day! </p>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => { :multipart => true }) do |f| %>
   <%= devise_error_messages! %>
   
   <div class="leftform">
@@ -23,6 +23,7 @@
 
   <div><%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+
   </div>
 
   <div class="rightform">
@@ -43,6 +44,11 @@
 
   <div><%= f.label :restphone, "Phone Number" %><br />
     <%= f.text_field :restphone %></div>
+
+  <div class="pic">
+      <%= f.label :avatar, "Add a picture of your restaurant." %> <br/>
+      <%= f.file_field :avatar %>
+  </div>
 
   <div><%= f.submit "Sign up" %></div>
   </div>
