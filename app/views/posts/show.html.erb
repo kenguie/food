@@ -1,5 +1,6 @@
 <div class="leftbox">
 
+<div class="posts_comments">
 <h1><%= @post.user.fname %>'s Question from <%= @post.user.restname %> in <%= @post.user.restcity %>, <%= @post.user.reststate %></h1>
 
 <p id="notice"><%= notice %></p>
@@ -22,37 +23,65 @@
 
 </div>
 
-<div class="rightbox">
-<div class="info">
-  <div class="picframe">
-  <%= image_tag @post.user.avatar.url %> 
+<div class="follow_container">
+  <div class="follow">
+    <h3>Who does <%= @post.user.fname %> follow?</h3>
+    <ul>
+      <% @post.user.followeds.each do |post| %>
+        <% if post.expert %>
+          <li class="expert"><%= post.fname %></li>
+        <% else %>
+          <li><%= post.fname %></li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="followingYou">
+    <h3>Who's following <%= @post.user.fname %></h3>
+    <ul>
+      <% @post.user.followers.each do |post| %>
+        <% if post.expert %>
+          <li class="expert"><%= post.fname %></li>
+        <% else %>
+          <li><%= post.fname %></li>
+        <% end %>
+      <% end %>
+    </ul>
   </div>
 </div>
 
-<div class="map">
-  <div style='width: 500px;'>
-  <div id="map" style='width: 475px; height: 400px;'></div>
 </div>
 
+
+<div class="rightbox">
+  <div class="info">
+    <div class="picframe">
+    <%= image_tag @post.user.avatar.url %> 
+    </div>
+  </div>
+
+  <div class="map">
+    <div style='width: 500px;'>
+      <div id="map" style='width: 475px; height: 400px;'></div>
+    </div>
+  </div>
+
 </div>
-</div>
 
-<!-- <h3> Following </h3>
-  <ul>
-
-  </ul>
-<br/> -->
-
-
+<div class="followSwitch">
 <%if current_user && @post.user != current_user %>
   <% if current_user.followeds.include? @post.user %>
-      <%= link_to 'unfollow', unfollow_post_path(@post.user), method: :post %> 
+      <%= link_to 'Unfollow ' + @post.user.fname, unfollow_post_path(@post.user), method: :post %> 
     <% else %>
-      <%= link_to 'follow', follow_post_path(@post.user), method: :post %>
+      <%= link_to 'Follow ' + @post.user.fname, follow_post_path(@post.user), method: :post %>
   <% end %>
 <% end %>
+</div>
 
 <br/>
+
+<div class="nav">
 <%= link_to 'Post Comment', new_post_comment_path(@post) %>  |
 <%= link_to "More posts from " + @post.user.fname, @post %> |
 
@@ -60,6 +89,8 @@
 <%= link_to 'Back', posts_path %> | 
 <%= link_to 'Edit Your Information', edit_user_registration_path %> | 
 <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+</div>
+
 
 <script type="text/javascript">
 handler = Gmaps.build('Google');

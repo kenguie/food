@@ -14,13 +14,11 @@ class CommentsController < ApplicationController
 	def create
 		@post = Post.find(params[:post_id])
 		@comment = @post.comments.create(comments_params)
-		# @comment.body = comments_params[:body]
-		# @comment.post_id = Post.find(params[:post_id])
 		@comment.user_id = current_user.id
 
 		if @comment.save
 			UserMailer.commented_email(current_user, @post).deliver
-			redirect_to post_path(@post)
+			redirect_to @post
 		else
 			flash[:alert] = "There was a problem with your comment."
 			render :new

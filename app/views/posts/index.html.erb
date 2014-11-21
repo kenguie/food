@@ -1,9 +1,19 @@
-<h1>History of Questions asked and Comments made</h1>
+<h1 id="heading">History of Questions asked and Comments made</h1>
+<h3 id="expert">Any name in <span class="expert"> green </span> will be a name of an expert in our field.</h3>
 
   <ul>
     <% @posts.each do |post| %>
       
-        <li class="post"><%= post.body %>  |  <%= post.user.fname %> from <%= post.user.restname %> in <%= post.user.restcity %>, <%= post.user.reststate %></li> 
+        <li class="post"><%= post.body %>  |  
+        
+        <% if post.user.expert %>
+          <span class="expert"><%= post.user.fname %></span>
+        <% else %>
+          <span ><%= post.user.fname %></span>
+        <%end%>
+
+        from <%= post.user.restname %> in <%= post.user.restcity %>, <%= post.user.reststate %></li> 
+
         <li class="links"><%= link_to 'Show', post %>  |  
         <%= link_to 'Edit', edit_post_path(post) %>  |  
         <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></li>
@@ -20,6 +30,7 @@
   </ul>
 
 <br>
+<p id="foot">If you would like to become an <span class="expert">expert</span> on this site, click here to email <a href="mailto:admin@tweatonfood.com?subject=Request to become an expert.&body=Say a few words here or send some documentation stating your qualifications on becoming an expert for Tweatonfood. Thanks for your time.">admin@tweatonfood.com</a> with your qualifications for approval. Thanks.</p><br/>
 
 <%= link_to 'New Post', new_post_path %>
 

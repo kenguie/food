@@ -1,5 +1,4 @@
 
-
 @font-face {
     font-family: 'condimentregular';
     src: url('condiment-regular-webfont.eot');
@@ -10,6 +9,16 @@
          url('condiment-regular-webfont.svg#condimentregular') format('svg');
     font-weight: normal;
     font-style: normal;
+}
+
+#landingContainer {
+	height: 600px;
+	width: 1018px;
+	background-color: whitesmoke;
+	opacity: 0.75;
+	border: 2px solid whitesmoke;
+	border-radius: 15px;
+	margin: 0 auto;
 }
 
 #home_body {
@@ -96,12 +105,16 @@ body {
 	clear: both;
 }
 
-/*-------------- Biz Page -----------------*/
+/*-------------- Biz Page (Show) -----------------*/
 
 .leftbox {
 	display: inline-block;
 	height: 800px;
 	width: 59%;
+}
+
+.posts_comments {
+	height: 500px;
 }
 
 
@@ -124,8 +137,35 @@ body {
 	height: 398px;
 }
 
+.followSwitch {
+	margin-top: 25px;
+}
+
+.nav {
+	margin-top: 25px;
+}
+
+/*------------ post index page ------------*/
+#heading{
+	margin-bottom: 0;
+}
+
+#expert {
+	margin-top: 0;
+}
+
+.expert {
+	color: green;
+}
+
+#foot {
+	margin-top: 20px;
+	margin-bottom: 0;
+}
+
 
 
 @import "post";
 @import "comments";
+
 
