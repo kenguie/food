@@ -31,6 +31,7 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'paperclip'
+gem 'mandrill-api'
 gem 'pry-rails', group: :development
 gem 'rspec-rails', '~> 3.0.0' 
 # Use ActiveModel has_secure_password

@@ -74,6 +74,7 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
     erubis (2.7.0)
+    excon (0.40.0)
     execjs (2.2.2)
     formtastic (3.0.0)
       actionpack (>= 3.2.13)
@@ -104,6 +105,9 @@ GEM
       activesupport (>= 3.0.0)
     mail (2.6.1)
       mime-types (>= 1.16, < 3)
+    mandrill-api (1.0.52)
+      excon (>= 0.16.0, < 1.0)
+      json (>= 1.7.7, < 2.0)
     method_source (0.8.2)
     mime-types (2.4.3)
     minitest (5.4.2)
@@ -214,6 +218,7 @@ DEPENDENCIES
   gmaps4rails
   jbuilder (~> 2.0)
   jquery-rails
+  mandrill-api
   paperclip
   pry-rails
   quiet_assets
