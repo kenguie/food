@@ -20,7 +20,7 @@
         
         <% post.comments.each do |comment| %>
         
-          <% if comment.post.id == post.id %>       <!-- Comment.find(32).user.fname -->
+          <% if comment.post.id == post.id %>       
             <li class="comment"> <%= comment.body %> | by <%= comment.user.fname %> from <%= comment.user.restname %> in <%= comment.user.restcity %>, <%= comment.user.reststate %>  <br/> </li> 
           <% else %>
 
@@ -32,8 +32,11 @@
 <br>
 <p id="foot">If you would like to become an <span class="expert">expert</span> on this site, click here to email <a href="mailto:admin@tweatonfood.com?subject=Request to become an expert.&body=Say a few words here or send some documentation stating your qualifications on becoming an expert for Tweatonfood. Thanks for your time.">admin@tweatonfood.com</a> with your qualifications for approval. Thanks.</p><br/>
 
+<%= link_to 'Home Page', root_path %>
+
 <%= link_to 'New Post', new_post_path %>
 
 <%= link_to "Your Posts", @post %> 
 
-<%= link_to 'Home Page', root_path %>
+<%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+

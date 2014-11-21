@@ -5,10 +5,16 @@
 
 <h2 class="title"> Here, people who are in the restaurant business can come together and share advice and experiences that will help each other survive in this cut-throat field </h2>
 
-<p id="home_menu"> <%= link_to 'About', about_path %> | <%= link_to 'Sign In', new_user_session_path %> | <%= link_to 'Sign Up!',
-	 new_user_registration_path %> | <%= link_to 'Log out', destroy_user_session_path, method: :delete %> | 
-	 <%= link_to 'Post something', new_post_path %> | <%= link_to 'The Board', posts_path %> </p> 
-	 <br/>
+<p id="home_menu">   
+
+		<% if user_session %>
+			<%= link_to 'Post something', new_post_path %> | <%= link_to 'The Board', posts_path %> | <%= link_to 'Log out', destroy_user_session_path, method: :delete %> 
+		<% else %>
+			<%= link_to 'About', about_path %> | <%= link_to 'Sign In', new_user_session_path %> | <%= link_to 'Sign Up!', new_user_registration_path %> 
+		<% end %>
+
+</p> 
+<br/>
 </div>
 
 </body>
