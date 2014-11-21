@@ -31,6 +31,7 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'paperclip'
+gem 'friendly_id', "~> 5.0.1"
 gem 'mandrill-api'
 gem 'pry-rails', group: :development
 gem 'rspec-rails', '~> 3.0.0' 

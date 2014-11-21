@@ -1,5 +1,4 @@
 
-
 @font-face {
     font-family: 'condimentregular';
     src: url('condiment-regular-webfont.eot');
@@ -124,8 +123,22 @@ body {
 	height: 398px;
 }
 
+/*------------ post index page ------------*/
+#heading{
+	margin-bottom: 0;
+}
+
+#expert {
+	margin-top: 0;
+}
+
+.expert {
+	color: green;
+}
+
 
 
 @import "post";
 @import "comments";
+
 
