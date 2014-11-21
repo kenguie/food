@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>You're being followed, <%= @post.user.fname %>!</h1>
+    <p>
+      Just wanted you to know that <%= @current_user.fname %> from <%= @current_user.restname %> has started following you.<br>
+    </p>
+    <p>Thanks for your time, have a great day!</p>
+    <p>-The Tweat on Food Staff-</p>
+  </body>
+</html>

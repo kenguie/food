@@ -19,6 +19,7 @@ class CommentsController < ApplicationController
 		@comment.user_id = current_user.id
 
 		if @comment.save
+			UserMailer.commented_email(current_user, @post).deliver
 			redirect_to post_path(@post)
 		else
 			flash[:alert] = "There was a problem with your comment."

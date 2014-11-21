@@ -4,13 +4,25 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable #, :validatable
 
+  after_create :send_mail
+  
+  def send_mail
+    UserMailer.welcome_email(self).deliver
+  end
+
+  before_destroy :send_goodbye
+
+  def send_goodbye
+    UserMailer.goodbye_email(self).deliver
+  end
+
   validates_presence_of :restname, message: "Restaurant Name cannot be blank."
   validates_presence_of :reststreet, message: "Restaurant Street Address cannot be blank."
   validates_presence_of :restcity, message: "Restaurant City cannot be blank."
   validates_presence_of :reststate, message: "Restaurant State cannot be blank."
 
-  	has_many :posts
-  	has_many :comments
+  	has_many :posts, dependent: :destroy
+  	has_many :comments, dependent: :destroy
 
   	has_many :relationships, foreign_key: "follower_id", class_name: "Relationship", dependent: :destroy
   	has_many :followeds, through: :relationships
