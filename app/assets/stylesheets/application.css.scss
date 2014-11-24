@@ -114,7 +114,7 @@ body {
 }
 
 .posts_comments {
-	height: 500px;
+	height: 450px;
 }
 
 
@@ -168,4 +168,13 @@ body {
 @import "post";
 @import "comments";
 
+/*---------- PostUser Page - aggregate for one user ------------*/
 
+.listposts li a {
+	text-decoration: none;
+	color: black;
+}
+
+.listposts li :hover {
+	text-decoration: underline;
+}

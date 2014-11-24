@@ -7,6 +7,8 @@ Rails.application.routes.draw do
       post 'follow'
       post 'unfollow'
     end
+
+    get 'postuser' => 'posts#postuser'
   end
 
   devise_for :users
