@@ -40,6 +40,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save 
+      @post.update :postname => @post.user.restname
       redirect_to @post
     else
       render :new
@@ -48,17 +49,29 @@ class PostsController < ApplicationController
 
   def show
     @user = Post.find(params[:id]).user.id
-
     @hash = Gmaps4rails.build_markers(@post.user) do |user, marker|
       marker.lat user.latitude
       marker.lng user.longitude
     end
   end
 
+  def postuser
+    @posts = Post.all
+    @post = Post.find(params[:post_id])
+    puts '*'*50
+    puts @post.user.fname
+    puts '*'*50
+  end
+
   def edit
   end
 
   def update
+    if @post.update(post_params) 
+      redirect_to @post
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -72,7 +85,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:body).merge(user_id: current_user.id)
+    params.require(:post).permit(:body, :postname).merge(user_id: current_user.id)
   end
 
   def set_post
