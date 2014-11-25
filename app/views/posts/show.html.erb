@@ -1,3 +1,16 @@
+<div class="nav">
+<%= link_to 'Post a Comment', new_post_comment_path(@post) %>  
+<%= link_to "More posts from " + @post.user.fname, post_postuser_path(@post) %> 
+
+<% if current_user.id == @post.user.id %>
+  <%= link_to 'Edit Your Post', edit_post_path(@post) %>  <%= link_to 'Delete Your Post', @post, method: :delete, data: { confirm: 'Are you sure?' } %>  <%= link_to 'Edit Your Information', edit_user_registration_path %>  
+<% end %>
+
+<%= link_to 'Back', posts_path %>   
+<%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+</div>
+
+
 <div class="leftbox">
 
 <div class="posts_comments">
@@ -15,7 +28,10 @@
         
   <% if comment.post.id == @post.id %>   
     <li class="comment"> <%= comment.body %> 
-    | by <%= comment.user.fname %> from <%= comment.user.restname %> in <%= comment.user.restcity %>, <%= comment.user.reststate %> <span class="date"> <%= comment.updated_at %> </span><br/> </li> 
+    | by <%= comment.user.fname %> from <%= comment.user.restname %> in <%= comment.user.restcity %>, <%= comment.user.reststate %> 
+      <% if comment.user.id == current_user.id %>
+         | <span class="editComment"> <%= link_to 'Edit Your Comment', edit_post_comment_path(comment.post.id, comment.id) %> </span><br/> </li> 
+      <% end %>
   <% else %>
 
   <% end %>
@@ -80,18 +96,6 @@
 </div>
 
 <br/>
-
-<div class="nav">
-<%= link_to 'Post Comment', new_post_comment_path(@post) %>  |
-<%= link_to "More posts from " + @post.user.fname, post_postuser_path(@post) %> |
-
-<% if current_user.id == @post.user.id %>
-  <%= link_to 'Edit Your Post', edit_post_path(@post) %> | <%= link_to 'Delete Your Post', @post, method: :delete, data: { confirm: 'Are you sure?' } %> | <%= link_to 'Edit Your Information', edit_user_registration_path %> | 
-<% end %>
-
-<%= link_to 'Back', posts_path %> |  
-<%= link_to 'Log out', destroy_user_session_path, method: :delete %>
-</div>
 
 
 <script type="text/javascript">

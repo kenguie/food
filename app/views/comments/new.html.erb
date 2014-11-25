@@ -1,5 +1,7 @@
-<h1> Post a comment here! </h1>
+<div class="nav">
+	<%= link_to 'Back', posts_path %>
+</div>
+
+<h1> Post your comment here for <%= @post.user.fname %>. </h1>
 
 <%= render 'form' %>
-
-<%= link_to 'Back', posts_path %>

@@ -1,3 +1,8 @@
+<div class="nav">
+	<%= link_to 'Back', posts_path %> |  
+	<%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+</div>
+
 <h1> Here are some more posts from <%= @post.user.fname %>: </h1>
 <p> Click on the post to see more of the conversation. </p>
 
@@ -9,7 +14,3 @@
 	<% end %>
 </ol>
 
-<div class="nav">
-<%= link_to 'Back', posts_path %> |  
-<%= link_to 'Log out', destroy_user_session_path, method: :delete %>
-</div>

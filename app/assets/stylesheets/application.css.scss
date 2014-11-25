@@ -11,6 +11,10 @@
     font-style: normal;
 }
 
+nav {
+	text-align: right;
+}
+
 #landingContainer {
 	height: 600px;
 	width: 1018px;
@@ -56,13 +60,18 @@
 	color: #F3F1F1;
 	font-family: serif;
 	font-size: 1.2em;
+	text-decoration: none;
+}
+
+#home_menu :hover {
+	text-decoration: underline;
 }
 
 body {
 	background-color: rgb(221, 235, 235);
 	width: 1200px;
 	margin: 0 auto;
-	margin-top: 50px;
+	margin-top: 25px;
 	margin-bottom: 50px;
 }
 
@@ -107,6 +116,25 @@ body {
 
 /*-------------- Biz Page (Show) -----------------*/
 
+.nav {
+	text-align: right;
+	margin-bottom: 25px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid black;
+}
+
+.nav a {
+	padding-left: 10px;
+	padding-right: 10px;
+	text-decoration: none;
+	color: black;
+}
+
+.nav :hover {
+	text-decoration: underline;
+	color: #e94840
+}
+
 .leftbox {
 	display: inline-block;
 	height: 800px;
@@ -117,6 +145,13 @@ body {
 	height: 450px;
 }
 
+.comment {
+	font-size: 1em;
+}
+
+.editComment {
+	font-size: .8em;
+}
 
 .rightbox {
 	width: 40%;
@@ -141,11 +176,26 @@ body {
 	margin-top: 25px;
 }
 
-.nav {
-	margin-top: 25px;
-}
 
 /*------------ post index page ------------*/
+
+nav {
+	padding-bottom: 15px;
+	border-bottom: 1px solid black;
+}
+
+nav a {
+	text-decoration: none;
+	color: black;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+nav :hover {
+	text-decoration: underline;
+	color: #e94840
+}
+
 #heading{
 	margin-bottom: 0;
 }
@@ -163,10 +213,18 @@ body {
 	margin-bottom: 0;
 }
 
-.date {
-	font-size: .5em;
-}
+.imgContainer {
+	border: solid 1px black;
+	border-radius: 5px;
+	display: inline-block;
+	background-color: whitesmoke;
+	width: 300px;
 
+	img {
+		padding: 20px;
+	}
+	
+}
 
 
 @import "post";
@@ -182,3 +240,33 @@ body {
 .listposts li :hover {
 	text-decoration: underline;
 }
+
+/*------------- Comment Form --------------*/
+
+#comment_body {
+	width: 500px;
+	height: 150px;
+	font-size: 1em;
+}
+
+input {
+	font-size: 1.2em;
+	margin-top: 10px;
+}
+
+/*--------------- Post Form ----------------*/
+
+#post_body {
+	width: 500px;
+	height: 150px;
+	font-size: 1em;
+}
+
+
+
+
+
+
+
+
+

@@ -31,6 +31,9 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    if current_user.posts.first != nil 
+      @post = current_user.posts.first.id
+    end
   end
 
   def new
@@ -58,9 +61,6 @@ class PostsController < ApplicationController
   def postuser
     @posts = Post.all
     @post = Post.find(params[:post_id])
-    puts '*'*50
-    puts @post.user.fname
-    puts '*'*50
   end
 
   def edit

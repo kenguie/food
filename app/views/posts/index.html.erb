@@ -1,3 +1,5 @@
+<%= render "shared/nav" %>
+
 <h1 id="heading">History of Questions asked and Comments made</h1>
 <h3 id="expert">Any name in <span class="expert"> green </span> will be a name of an expert in our field.</h3>
 
@@ -12,12 +14,12 @@
           <span ><%= post.user.fname %></span>
         <%end%>
 
-        from <%= post.user.restname %> in <%= post.user.restcity %>, <%= post.user.reststate %> <span class="date"> <%= post.updated_at %> </span></li> 
+        from <%= post.user.restname %> in <%= post.user.restcity %>, <%= post.user.reststate %> </li> 
         
         <% post.comments.each do |comment| %>
         
           <% if comment.post.id == post.id %>       
-            <li class="comment"> <%= comment.body %> | by <%= comment.user.fname %> from <%= comment.user.restname %> in <%= comment.user.restcity %>, <%= comment.user.reststate %>  <br/> </li> 
+            <li class="comment"> <%= comment.body %> | by <%= comment.user.fname %> from <%= comment.user.restname %> in <%= comment.user.restcity %>, <%= comment.user.reststate %> <br/> </li> 
           <% else %>
 
           <% end %>
@@ -28,30 +30,13 @@
 <br>
 <p id="foot">If you would like to become an <span class="expert">expert</span> on this site, click here to email <a href="mailto:admin@tweatonfood.com?subject=Request to become an expert.&body=Say a few words here or send some documentation stating your qualifications on becoming an expert for Tweatonfood. Thanks for your time.">admin@tweatonfood.com</a> with your qualifications for approval. Thanks.</p><br/>
 
-<%= link_to 'Home Page', root_path %>
 
-<%= link_to 'New Post', new_post_path %>
-
-<%= link_to "Your Posts", @post %> 
-
-<%= link_to 'Log out', destroy_user_session_path, method: :delete %>
-
-
-
-
-<div class="container-fluid">
-
-<div class="row">
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <img data-src="holder.js/300x300" alt="...">
-      <div class="caption">
-        <h3>Thumbnail label</h3>
-        <p>...</p>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-      </div>
-    </div>
-  </div>
+<!-- <div class="imgContainer">
+  <img src="assets/dee.jpg" alt="Dee's Diner in Salt Lake City, Ut">
 </div>
-
+<div class="imgContainer">
+  <img src="assets/bg.jpg" alt="Bamboo Gardens in Miami, Fl">
 </div>
+<div class="imgContainer">
+  <img src="assets/kenkee.jpg" alt="Kenkee in Chicago, Il">
+</div> -->

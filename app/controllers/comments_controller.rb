@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
 	before_action :authenticate_user!
 	before_action :set_comment, only: [:edit, :update, :destroy]
+	before_action :set_post, only: [:new, :create, :edit, :update]
 
 	def index
 
@@ -8,11 +9,9 @@ class CommentsController < ApplicationController
 
 	def new
 		@comment = Comment.new
-		@post = Post.find(params[:post_id])
 	end
 
 	def create
-		@post = Post.find(params[:post_id])
 		@comment = @post.comments.create(comments_params)
 		@comment.user_id = current_user.id
 
@@ -34,7 +33,12 @@ class CommentsController < ApplicationController
 	end
 
 	def update
-
+		if @comment.update(comments_params)
+			redirect_to @post
+		else
+			flash[:alert] = "There was a problem with your comment."
+			render :edit
+		end
 	end
 
 	def destroy
@@ -48,6 +52,10 @@ class CommentsController < ApplicationController
 
 	def comments_params
 		params.require(:comment).permit(:body, :comment_on).merge(post_id: current_user.id)
+	end
+
+	def set_post
+		@post = Post.find(params[:post_id])
 	end
 
 	def set_comment
