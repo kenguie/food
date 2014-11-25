@@ -16,22 +16,48 @@ nav {
 }
 
 #landingContainer {
+	position: absolute;
 	height: 600px;
 	width: 1018px;
 	background-color: whitesmoke;
 	opacity: 0.75;
 	border: 2px solid whitesmoke;
 	border-radius: 15px;
-	margin: 0 auto;
+	left: 50%;
+	margin-left: -504px;
 }
 
 #home_body {
 	background-image: url("/assets/apple.jpg");
-    background-size: 100%;
-    background-attachment: fixed;
-    background-position: center;
+  background-size: 100%;
+  background-attachment: fixed;
+  background-position: center;
 }
 
+#overlay {
+	position: absolute;
+	display: none;
+	height: 600px;
+	width: 1018px;
+	background-color: whitesmoke;
+	opacity: 0.75;
+	border: 2px solid whitesmoke;
+	border-radius: 15px;
+	left: 50%;
+	margin-left: -504px;
+}
+
+#overlayText {
+	width: 800px;
+	margin: 0 auto;
+	text-indent: 50px;
+	padding-top: 5%;
+	font-size: 1.2em;
+}
+
+#overlayText h1 {
+	text-indent: 0;
+}
 
 .title {
 	font-family: 'condimentregular', 'serif';
@@ -68,11 +94,16 @@ nav {
 }
 
 body {
-	background-color: rgb(221, 235, 235);
+	#background-color: rgb(221, 235, 235);
 	width: 1200px;
 	margin: 0 auto;
 	margin-top: 25px;
 	margin-bottom: 50px;
+
+	background: -webkit-linear-gradient(left top, #ddebeb , white); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #ddebeb, white); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #ddebeb, white); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #ddebeb , white); /* Standard syntax (must be last) */
 }
 
 .post {
@@ -91,6 +122,12 @@ body {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	font-size: 1.0em;
+}
+
+//------------------ Layout --------------------//
+
+.welcome img {
+	height: 20px;
 }
 
 /*------------ sign up form ---------------*/
@@ -146,11 +183,22 @@ body {
 }
 
 .comment {
-	font-size: 1em;
+	font-size: 1.2em;
+	margin-left: 40px;
 }
 
 .editComment {
 	font-size: .8em;
+}
+
+.editComment a {
+	font-size: .9em;
+	text-decoration: none;
+	color: black;
+}
+
+.editComment :hover {
+	color: #e94840
 }
 
 .rightbox {

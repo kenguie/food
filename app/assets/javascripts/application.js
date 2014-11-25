@@ -16,3 +16,19 @@
 //= require underscore
 //= require gmaps/google
 //= require_tree .
+
+$(document).on('ready page:load', function () {
+
+/*--- Display About ---*/
+  $(".about").click(function(){
+    $("#overlay").fadeIn(1000);
+    $("#landingContainer").fadeOut(1000);
+	});
+
+/*--- Hide About ---*/
+  $("a.close").click(function(){
+  	$("#overlay").fadeOut(1000);
+  	$("#landingContainer").fadeIn(1000);
+  });
+
+});

@@ -10,6 +10,12 @@
 </head>
 <body>
 
+<% if current_user %>
+	<p class="welcome"><img src="/assets/dot.png" alt="dot signifying signin"> You are signed in as <%= current_user.fname %> </p>
+<% else %>
+
+<% end %>
+
 <%= flash[:notice] if flash[:notice] %>
 <%= flash[:alert] if flash[:alert] %>
 <%= yield %>

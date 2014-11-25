@@ -30,7 +30,7 @@
     <li class="comment"> <%= comment.body %> 
     | by <%= comment.user.fname %> from <%= comment.user.restname %> in <%= comment.user.restcity %>, <%= comment.user.reststate %> 
       <% if comment.user.id == current_user.id %>
-         | <span class="editComment"> <%= link_to 'Edit Your Comment', edit_post_comment_path(comment.post.id, comment.id) %> </span><br/> </li> 
+          |  <span class="editComment"> <%= link_to 'Edit', edit_post_comment_path(comment.post.id, comment.id) %> </span><br/> </li> 
       <% end %>
   <% else %>
 
