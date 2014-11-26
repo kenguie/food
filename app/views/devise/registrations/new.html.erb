@@ -1,5 +1,9 @@
-<h2>Sign up</h2>
+<div class="nav">
+  <%= link_to 'Back', root_path %> |  
+  <%= render "devise/shared/links" %>
+</div>
 
+<h1> Sign Up </h1>
 <p> Please take a moment to fill out this form and become a member of the site. There is no charge and you'll be able to make posts to help others and read the columns on advice you may need. Thanks! Have a great day! </p>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => { :multipart => true }) do |f| %>
@@ -56,4 +60,3 @@
 <% end %>
 
 
-<%= render "devise/shared/links" %>

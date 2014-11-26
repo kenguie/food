@@ -93,17 +93,21 @@ nav {
 	text-decoration: underline;
 }
 
+html {
+	min-height: 100%;
+}
+
 body {
 	#background-color: rgb(221, 235, 235);
 	width: 1200px;
 	margin: 0 auto;
 	margin-top: 25px;
 	margin-bottom: 50px;
-
-	background: -webkit-linear-gradient(left top, #ddebeb , white); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(bottom right, #ddebeb, white); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(bottom right, #ddebeb, white); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom right, #ddebeb , white); /* Standard syntax (must be last) */
+	// old color #ddebeb
+	background: -webkit-linear-gradient(left top, #CCEFEF , white); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #CCEFEF, white); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #CCEFEF, white); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #CCEFEF , white); /* Standard syntax (must be last) */
 }
 
 .post {
@@ -142,7 +146,13 @@ body {
 .rightform {
 	width: 49%;
 	float:left;
+	margin-bottom: 20px;
 }
+
+.pic {
+	margin-top: 20px;
+}
+
 
 /*------------- Update Form ---------------*/
 
@@ -309,7 +319,6 @@ input {
 	height: 150px;
 	font-size: 1em;
 }
-
 
 
 

@@ -18,9 +18,9 @@
 <p id="home_menu">   
 
 		<% if user_session %>
-			<a class="about" href="#">About</a> | <%= link_to 'Post something', new_post_path %> | <%= link_to 'The Board', posts_path %> | <%= link_to 'Log out', destroy_user_session_path, method: :delete %> 
+			<a class="about" href="#">About</a> | <%= link_to 'Post something', new_post_path %> | <%= link_to 'The Board', posts_path %> | <a href="mailto:info@tweatonfood.com"> Contact Us </a> | <%= link_to 'Log out', destroy_user_session_path, method: :delete %> 
 		<% else %>
-			<a class="about" href="#">About</a> | <%= link_to 'Sign In', new_user_session_path %> | <%= link_to 'Sign Up!', new_user_registration_path %> 
+			<a class="about" href="#">About</a> | <%= link_to 'Sign In', new_user_session_path %> | <%= link_to 'Sign Up!', new_user_registration_path %> | <a href="mailto:info@tweatonfood.com"> Contact Us </a>
 		<% end %>
 
 </p> 
