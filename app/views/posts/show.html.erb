@@ -10,7 +10,7 @@
 <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
 </div>
 
-
+<div class="boxContainer">
 <div class="leftbox">
 
 <div class="posts_comments">
@@ -93,6 +93,7 @@
       <%= link_to 'Follow ' + @post.user.fname, follow_post_path(@post.user), method: :post %>
   <% end %>
 <% end %>
+</div>
 </div>
 
 <br/>

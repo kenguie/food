@@ -3,14 +3,38 @@
 	<%= link_to 'Log out', destroy_user_session_path, method: :delete %>
 </div>
 
+  <div class="section group">
+    <div class="col s1">
+
 <h1> Here are some more posts from <%= @post.user.fname %>: </h1>
 <p> Click on the post to see more of the conversation. </p>
 
 <ol class="listposts">
 	<% @posts.each do |post| %>
 		<% if @post.user.id == post.user.id %>
-  		<li> <%= link_to post.body, post_path(post) %> from <%= post.user.fname %> </li>
+  		<li class="postuser"> <%= link_to post.body, post_path(post) %> </li>
 		<% end %>
 	<% end %>
-</ol>
+</ol>	
 
+    </div>
+
+
+    
+    <div class="col s2">
+    	
+      <div class="imgContainer1">
+        <img src="/assets/dee.jpg" alt="Dee's Diner in Salt Lake City, Ut">
+      </div>
+      <div class="imgContainer">
+        <img src="/assets/bg.jpg" alt="Bamboo Gardens in Miami, Fl">
+      </div>
+      <div class="imgContainer">
+        <img src="/assets/kenkee.jpg" alt="Kenkee in Chicago, Il">
+      </div>
+      <div class="imgContainer">
+        <img src="/assets/grandpalace.jpg" alt="Grand Palace in Chicago, Il">
+      </div>
+
+    </div>
+  </div>
