@@ -6,13 +6,13 @@
   <div class="section group">
     <div class="col s1">
 
-<h1> Here are some more posts from <%= @post.user.fname %>: </h1>
+<h1> Here are some more posts from <span class="expert"><%= @post.user.fname %></span>: </h1>
 <p> Click on the post to see more of the conversation. </p>
 
 <ol class="listposts">
 	<% @posts.each do |post| %>
 		<% if @post.user.id == post.user.id %>
-  		<li class="postuser"> <%= link_to post.body, post_path(post) %> </li>
+  		<li class="postuser"> <%= link_to post.title, post_path(post) %> </li>
 		<% end %>
 	<% end %>
 </ol>	

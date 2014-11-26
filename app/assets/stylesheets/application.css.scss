@@ -110,23 +110,6 @@ body {
   background: linear-gradient(to bottom right, #CCEFEF , white); /* Standard syntax (must be last) */
 }
 
-.post {
-	font-size: 1.5em;
-	list-style: none;
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
-
-.links {
-	list-style: none;
-}
-
-// .comment {
-// 	margin-left: 60px;
-// 	margin-top: 10px;
-// 	margin-bottom: 10px;
-// 	font-size: 1.0em;
-// }
 
 //------------------ Layout --------------------//
 
@@ -187,12 +170,11 @@ body {
 
 .leftbox {
 	display: inline-block;
-	height: 800px;
 	width: 59%;
 }
 
 .posts_comments {
-	height: 450px;
+	margin-bottom: 30px;
 
 	h1 {
 		margin-top: 0;
@@ -201,9 +183,13 @@ body {
 
 .comment {
 	font-size: 1.2em;
-	margin-left: 40px;
 	margin-top: 10px;
-	margin-bottom: 10px;
+	border-bottom: 1px solid gray;
+	padding-bottom: 15px;
+}
+
+.comment p {
+	margin-left: 25px;
 }
 
 .editComment {
@@ -280,6 +266,28 @@ nav :hover {
 	margin-bottom: 0;
 }
 
+.post {
+	font-size: 1.5em;
+	list-style: none;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: -20px;
+}
+
+#link a {
+	text-decoration: none;
+	color: black;
+}
+
+#link :hover {
+	text-decoration: underline;
+	color: darkblue;
+}
+
+.links {
+	list-style: none;
+}
+
 .imgContainer1 {
 	border: solid 1px black;
 	border-radius: 5px;
@@ -325,6 +333,15 @@ nav :hover {
 
 /*------------- Comment Form --------------*/
 
+#comment_Title {
+	margin-bottom: 15px;
+}
+
+#comment_title {
+	border: 1px solid black;
+	width: 450px;
+}
+
 #comment_body {
 	width: 500px;
 	height: 150px;
@@ -338,15 +355,22 @@ input {
 
 /*--------------- Post Form ----------------*/
 
+#post_Title {
+	margin-bottom: 15px;
+}
+
+#post_title {
+	border: 1px solid black;
+	width: 450px;
+}
+
 #post_body {
 	width: 500px;
 	height: 150px;
 	font-size: 1em;
 }
 
-
-
-
+/*----- Flow.gs used to generate column for pictures on right ------*/
 /*! 
  * Flow - A Fully Fluid Responsive Grid System
  * Created by Isaac Gray
@@ -396,6 +420,4 @@ input {
 	.s2{ width: 33.33%; }
 
 }
-
-
 

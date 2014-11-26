@@ -11,6 +11,11 @@
       </ul>
     </div>
   <% end %>
+  
+  <div id="post_Title">
+    <%= f.label :title, 'Title:' %>
+    <%= f.text_field :title %> <br/>
+  </div>
 
   <div class="field">
     <%= f.text_area :body %>

@@ -10,12 +10,12 @@
   <ul>
     <% @posts.each do |post| %>
       
-        <li class="post"> <%= link_to post.body, post %>  |  
+        <li class="post"> <span id="link"> <%= link_to post.title, post %>  </span> | 
         
         <% if post.user.expert %>
           <span class="expert"><%= post.user.fname %></span>
         <% else %>
-          <span ><%= post.user.fname %></span>
+          <span><%= post.user.fname %></span>
         <%end%>
 
         from <%= post.user.restname %> in <%= post.user.restcity %>, <%= post.user.reststate %> </li> 
@@ -23,7 +23,7 @@
         <% post.comments.each do |comment| %>
         
           <% if comment.post.id == post.id %>       
-            <li class="comment"> <%= comment.body %> | by <%= comment.user.fname %> from <%= comment.user.restname %> in <%= comment.user.restcity %>, <%= comment.user.reststate %> <br/> </li> 
+            <li class="comment"> <%= comment.title %> | by <span class="expert"><%= comment.user.fname %></span> from <%= comment.user.restname %> in <%= comment.user.restcity %>, <%= comment.user.reststate %> <br/> </li> 
           <% else %>
 
           <% end %>

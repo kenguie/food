@@ -19,7 +19,6 @@ class CommentsController < ApplicationController
 			UserMailer.commented_email(current_user, @post).deliver
 			redirect_to @post
 		else
-			flash[:alert] = "There was a problem with your comment."
 			render :new
 		end
 	end
@@ -36,7 +35,6 @@ class CommentsController < ApplicationController
 		if @comment.update(comments_params)
 			redirect_to @post
 		else
-			flash[:alert] = "There was a problem with your comment."
 			render :edit
 		end
 	end
@@ -51,7 +49,7 @@ class CommentsController < ApplicationController
 	private
 
 	def comments_params
-		params.require(:comment).permit(:body, :comment_on).merge(post_id: current_user.id)
+		params.require(:comment).permit(:title, :body).merge(post_id: current_user.id)
 	end
 
 	def set_post
