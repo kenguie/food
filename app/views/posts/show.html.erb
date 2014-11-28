@@ -14,18 +14,24 @@
   <div class="leftbox">
 
     <div class="posts_comments">
-      <h1><%= @post.user.fname %>'s Question from <%= @post.user.restname %> in <%= @post.user.restcity %>, <%= @post.user.reststate %></h1>
+      <div id="postbox">
+        <h1><%= @post.user.fname %>'s Question from <%= @post.user.restname %> in <%= @post.user.restcity %>, <%= @post.user.reststate %></h1>
 
-      <p id="notice"><%= notice %></p>
+        <p id="notice"><%= notice %></p>
 
-      <p>
-        <strong>Title:</strong>
-        <%= @post.title %> </p> 
-        <strong>Body:</strong>
-        <%= @post.body %> 
-      </p>
+        <p>
+          <strong>Title:</strong>
+            <span class="postStyle">
+              <%= @post.title %> </p> 
+            </span>
+          <strong>Body:</strong>
+            <span class="postStyle">
+              <%= @post.body %> 
+            </span>
+        </p>
+      </div>
 
-      <p> Comments: </p>
+      <p> <strong> Comments: </strong> </p>
 
   <% @post.comments.each do |comment| %>        
     <% if comment.post.id == @post.id %>   
