@@ -6,7 +6,6 @@ class PostsController < ApplicationController
     @user = User.find(params[:id])
     @rel = Relationship.new(follower_id: current_user.id, followed_id: @user.id)
     if @rel.save
-        # Tell the UserMailer to send an email after save
       UserMailer.followed_email(current_user, @post).deliver
       flash[:notice] = "You are now following " + @user.username 
       redirect_to posts_path

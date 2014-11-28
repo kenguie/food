@@ -1,32 +1,31 @@
 <body id="home_body">
 
-<div id="overlay">
-	<div id="overlayText">
-	<h1> Why does this site exist? </h1>
+	<div id="overlay">
+		<div id="overlayText">
+			<h1> Why does this site exist? </h1>
 
-	<p> Too many times, I have seen restaurants go under, restaurants I liked, owned by people I care about.  Most recently, a neighbor had lost her business because of lack of advice and perhaps a lack of experience in owning her own business.  I'm hoping that here, experts, consultants, and new restauranteurs will gather and share with each other the information needed to survive so people who invest so much in starting their new businesses have a higher percentage of succeeding. </p>
+			<p> Too many times, I have seen restaurants go under, restaurants I liked, owned by people I care about.  Most recently, a neighbor had lost her business because of lack of advice and perhaps a lack of experience in owning her own business.  I'm hoping that here, experts, consultants, and new restauranteurs will gather and share with each other the information needed to survive so people who invest so much in starting their new businesses have a higher percentage of succeeding. </p>
 
-	<a class="close" href="#">Close</a>
+			<a class="close" href="#">Close</a>
+		</div>
 	</div>
-</div>
 
-<div id="landingContainer">
-<h1 class="title" id="top"> Welcome to <span id="bigTitle"> Tweat on Food! </span></h1>
+	<div id="landingContainer">
+		<h1 class="title" id="top"> Welcome to <span id="bigTitle"> Tweat on Food! </span></h1>
 
-<h2 class="title"> Here, people who are in the restaurant business can come together and share advice and experiences that will help each other survive in this cut-throat field </h2>
+		<h2 class="title"> Here, people who are in the restaurant business can come together and share advice and experiences that will help each other survive in this cut-throat field </h2>
 
-<p id="home_menu">   
+		<p id="home_menu">   
 
-		<% if user_session %>
-			<a class="about" href="#">About</a> | <%= link_to 'Post something', new_post_path %> | <%= link_to 'The Board', posts_path %> | <a href="mailto:info@tweatonfood.com"> Contact Us </a> | <%= link_to 'Log out', destroy_user_session_path, method: :delete %> 
-		<% else %>
-			<a class="about" href="#">About</a> | <%= link_to 'Sign In', new_user_session_path %> | <%= link_to 'Sign Up!', new_user_registration_path %> | <a href="mailto:info@tweatonfood.com"> Contact Us </a>
-		<% end %>
+			<% if user_session %>
+				<a class="about" href="#">About</a> | <%= link_to 'Post something', new_post_path %> | <%= link_to 'The Board', posts_path %> | <a href="mailto:info@tweatonfood.com"> Contact Us </a> | <%= link_to 'Log out', destroy_user_session_path, method: :delete %> 
+			<% else %>
+				<a class="about" href="#">About</a> | <%= link_to 'Sign In', new_user_session_path %> | <%= link_to 'Sign Up!', new_user_registration_path %> | <a href="mailto:info@tweatonfood.com"> Contact Us </a>
+			<% end %>
 
-</p> 
-<br/>
-</div>
-
+		</p> 
+		<br/>
+	</div>
 </body>
 
 

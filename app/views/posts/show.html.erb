@@ -1,44 +1,44 @@
 <div class="nav">
-<%= link_to 'Post a Comment', new_post_comment_path(@post) %>  
-<%= link_to "More posts from " + @post.user.fname, post_postuser_path(@post) %> 
+  <%= link_to 'Post a Comment', new_post_comment_path(@post) %>  
+  <%= link_to "More posts from " + @post.user.fname, post_postuser_path(@post) %> 
 
-<% if current_user.id == @post.user.id %>
-  <%= link_to 'Edit Your Post', edit_post_path(@post) %>  <%= link_to 'Delete Your Post', @post, method: :delete, data: { confirm: 'Are you sure?' } %>  <%= link_to 'Edit Your Information', edit_user_registration_path %>  
-<% end %>
+  <% if current_user.id == @post.user.id %>
+    <%= link_to 'Edit Your Post', edit_post_path(@post) %>  <%= link_to 'Delete Your Post', @post, method: :delete, data: { confirm: 'Are you sure?' } %>  <%= link_to 'Edit Your Information', edit_user_registration_path %>  
+  <% end %>
 
-<%= link_to 'Back', posts_path %>   
-<%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+  <%= link_to 'Back', posts_path %>   
+  <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
 </div>
 
 <div class="boxContainer">
-<div class="leftbox">
+  <div class="leftbox">
 
-<div class="posts_comments">
-<h1><%= @post.user.fname %>'s Question from <%= @post.user.restname %> in <%= @post.user.restcity %>, <%= @post.user.reststate %></h1>
+    <div class="posts_comments">
+      <h1><%= @post.user.fname %>'s Question from <%= @post.user.restname %> in <%= @post.user.restcity %>, <%= @post.user.reststate %></h1>
 
-<p id="notice"><%= notice %></p>
+      <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %> </p> 
-  <strong>Body:</strong>
-  <%= @post.body %> 
-</p>
+      <p>
+        <strong>Title:</strong>
+        <%= @post.title %> </p> 
+        <strong>Body:</strong>
+        <%= @post.body %> 
+      </p>
 
-<p> Comments: </p>
-<% @post.comments.each do |comment| %>
-        
-  <% if comment.post.id == @post.id %>   
-    <li class="commentShow"> <%= comment.title %> <br/>
-    <%= simple_format(comment.body) %>
-    By <span class="expert"><%= comment.user.fname %></span> from <%= comment.user.restname %> in <%= comment.user.restcity %>, <%= comment.user.reststate %> 
-      <% if comment.user.id == current_user.id %>
-          |  <span class="editComment"> <%= link_to 'Edit', edit_post_comment_path(comment.post.id, comment.id) %> </span><br/> </li> 
-      <% end %>
-  <% else %>
+      <p> Comments: </p>
 
-  <% end %>
-<% end %>   
+  <% @post.comments.each do |comment| %>        
+    <% if comment.post.id == @post.id %>   
+      <li class="commentShow"> <%= comment.title %> <br/>
+      <%= simple_format(comment.body) %>
+      By <span class="expert"><%= comment.user.fname %></span> from <%= comment.user.restname %> in <%= comment.user.restcity %>, <%= comment.user.reststate %> 
+        <% if comment.user.id == current_user.id %>
+            |  <span class="editComment"> <%= link_to 'Edit', edit_post_comment_path(comment.post.id, comment.id) %> </span><br/> </li> 
+        <% end %>
+    <% else %>
+
+    <% end %>
+  <% end %>   
 
 </div>
 
@@ -88,16 +88,15 @@
 
 </div>
 
-<div class="followSwitch">
-<%if current_user && @post.user != current_user %>
-  <% if current_user.followeds.include? @post.user %>
-      <%= link_to 'Unfollow ' + @post.user.fname, unfollow_post_path(@post.user), method: :post %> 
-    <% else %>
-      <%= link_to 'Follow ' + @post.user.fname, follow_post_path(@post.user), method: :post %>
-  <% end %>
-<% end %>
-</div>
-</div>
+  <div class="followSwitch">
+    <%if current_user && @post.user != current_user %>
+      <% if current_user.followeds.include? @post.user %>
+          <%= link_to 'Unfollow ' + @post.user.fname, unfollow_post_path(@post.user), method: :post %> 
+        <% else %>
+          <%= link_to 'Follow ' + @post.user.fname, follow_post_path(@post.user), method: :post %>
+      <% end %>
+    <% end %>
+  </div>
 
 <br/>
 

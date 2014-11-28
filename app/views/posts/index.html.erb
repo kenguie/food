@@ -4,33 +4,32 @@
   <div class="section group">
     <div class="col s1">
 
-<h1 id="heading">History of Questions asked and Comments made</h1>
-<h3 id="expert">Any name in <span class="expert"> green </span> will be a name of an expert in our field.</h3>
+      <h1 id="heading">History of Questions asked and Comments made</h1>
+      <h3 id="expert">Any name in <span class="expert"> green </span> will be a name of an expert in our field.</h3>
 
-  <ul>
-    <% @posts.each do |post| %>
-      
-        <li class="post"> <span id="link"> <%= link_to post.title, post %>  </span> | 
+      <ul>
+        <% @posts.each do |post| %>
         
-        <% if post.user.expert %>
-          <span class="expert"><%= post.user.fname %></span>
-        <% else %>
-          <span><%= post.user.fname %></span>
-        <%end%>
-
-        from <%= post.user.restname %> in <%= post.user.restcity %>, <%= post.user.reststate %> </li> 
-        
-        <% post.comments.each do |comment| %>
-        
-          <% if comment.post.id == post.id %>       
-            <li class="comment"> <%= comment.title %> | by <span class="expert"><%= comment.user.fname %></span> from <%= comment.user.restname %> in <%= comment.user.restcity %>, <%= comment.user.reststate %> <br/> </li> 
+          <li class="post"> <span id="link"> <%= link_to post.title, post %>  </span> | 
+            
+          <% if post.user.expert %>
+            <span class="expert"><%= post.user.fname %></span>
           <% else %>
+            <span><%= post.user.fname %></span>
+          <%end%>
 
-          <% end %>
-        <% end %>   
-    <% end %>
-  </ul>
+          from <%= post.user.restname %> in <%= post.user.restcity %>, <%= post.user.reststate %> </li> 
+            
+          <% post.comments.each do |comment| %>
+            
+            <% if comment.post.id == post.id %>       
+              <li class="comment"> <%= comment.title %> | by <span class="expert"><%= comment.user.fname %></span> from <%= comment.user.restname %> in <%= comment.user.restcity %>, <%= comment.user.reststate %> <br/> </li> 
+            <% else %>
 
+            <% end %>
+          <% end %>   
+        <% end %>
+      </ul>
     </div>
 
 
@@ -50,5 +49,5 @@
     </div>
   </div>
 
-<br>
+  <br>
 <p id="foot">If you would like to become an <span class="expert">expert</span> on this site, click here to email <a href="mailto:admin@tweatonfood.com?subject=Request to become an expert.&body=Say a few words here or send some documentation stating your qualifications on becoming an expert for Tweatonfood. Thanks for your time.">admin@tweatonfood.com</a> with your qualifications for approval. Thanks.</p><br/>
