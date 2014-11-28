@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141126185223) do
+ActiveRecord::Schema.define(version: 20141128203320) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -106,6 +106,7 @@ ActiveRecord::Schema.define(version: 20141126185223) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.boolean  "expert"
+    t.string   "restcountry"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -18,8 +18,8 @@ class User < ActiveRecord::Base
 
   validates_presence_of :restname, message: "Restaurant Name cannot be blank."
   validates_presence_of :reststreet, message: "Restaurant Street Address cannot be blank."
-  validates_presence_of :restcity, message: "Restaurant City cannot be blank."
-  validates_presence_of :reststate, message: "Restaurant State cannot be blank."
+  validates_presence_of :restcity, message: "Restaurant City or Province cannot be blank."
+  validates_presence_of :restcountry, message: "Restaurant Country cannot be blank."
 
   	has_many :posts, dependent: :destroy
   	has_many :comments, dependent: :destroy
@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
   after_validation :geocode  
 
   def address
-    [reststreet, restcity, reststate, restzip].compact.join(', ')
+    [reststreet, restcity, reststate, restzip, restcountry].compact.join(', ')
   end
 
   has_attached_file :avatar, :default_url => "missing.png"

@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 	before_action :authenticate_user!
 	before_action :set_comment, only: [:edit, :update, :destroy]
-	before_action :set_post, only: [:new, :create, :edit, :update]
+	before_action :set_post, only: [:new, :create, :edit, :update, :destroy]
 
 	def index
 
@@ -33,17 +33,22 @@ class CommentsController < ApplicationController
 
 	def update
 		if @comment.update(comments_params)
+			flash[:notice] = 'Comment Updated.'
 			redirect_to @post
 		else
+			flash[:alert] = 'There was a problem.'
 			render :edit
 		end
 	end
 
 	def destroy
-		@post = Post.find[:post_id]
-		@comment = Post.comments.create(comments_params)
-		@comment.destroy
-		redirect_to post_path(@post)
+		if @comment.destroy
+			flash[:notice] = 'Comment deleted.'
+			redirect_to post_path(@post)
+		else
+			flash[:alert] = 'There was a problem with comment deletion.'
+			redirect_to @post
+		end
 	end
 
 	private

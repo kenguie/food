@@ -17,12 +17,25 @@
             <span><%= post.user.fname %></span>
           <%end%>
 
-          from <%= post.user.restname %> in <%= post.user.restcity %>, <%= post.user.reststate %> </li> 
+          from <%= post.user.restname %> in <%= post.user.restcity %>, 
+
+            <% if post.user.reststate == "" %>
+              <%= post.user.restcountry %>
+            <% else %>
+              <%= post.user.reststate %>, <%= post.user.restcountry %>
+            <% end %> </li> 
             
           <% post.comments.each do |comment| %>
             
             <% if comment.post.id == post.id %>       
-              <li class="comment"> <%= comment.title %> | by <span class="expert"><%= comment.user.fname %></span> from <%= comment.user.restname %> in <%= comment.user.restcity %>, <%= comment.user.reststate %> <br/> </li> 
+              <li class="comment"> <%= comment.title %> | by <span class="expert"><%= comment.user.fname %></span> from <%= comment.user.restname %> in <%= comment.user.restcity %>, 
+
+                <% if comment.user.reststate == "" %>
+                  <%= comment.user.restcountry %>
+                <% else %>
+                  <%= comment.user.reststate %>, <%= comment.user.restcountry %>
+                <% end %>
+
             <% else %>
 
             <% end %>

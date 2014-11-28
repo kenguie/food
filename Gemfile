@@ -38,6 +38,8 @@ gem 'paperclip'
 gem 'friendly_id', "~> 5.0.1"
 gem 'mandrill-api'
 gem 'yelp'
+gem 'country_select', github: 'stefanpenner/country_select'
+gem 'passenger'
 gem 'pry-rails', group: :development
 gem 'rspec-rails', '~> 3.0.0' 
 # Use ActiveModel has_secure_password
