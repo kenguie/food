@@ -38,19 +38,22 @@
 
   <div class="rightform">
   <div><%= f.label :restname, "Restaurant Name" %><br />
-    <%= f.text_field :restname %></div>
+    <%= f.text_field :restname, placeholder: 'required' %></div>
 
   <div><%= f.label :reststreet, "Restaurant Address" %><br />
-    <%= f.text_field :reststreet %></div>
+    <%= f.text_field :reststreet, placeholder: 'required' %></div>
 
-  <div><%= f.label :restcity, "City" %><br />
-    <%= f.text_field :restcity %></div>
+  <div><%= f.label :restcity, "City or Province" %><br />
+    <%= f.text_field :restcity, placeholder: 'required' %></div>
 
   <div><%= f.label :reststate, "State" %><br />
     <%= f.text_field :reststate %></div>
 
   <div><%= f.label :restzip, "Zip Code" %><br />
     <%= f.text_field :restzip %></div>
+
+  <div><%= f.label :restcountry, "Country" %><br />
+    <%= f.text_field :restcountry, placeholder: 'required' %></div>
 
   <div><%= f.label :restphone, "Phone Number" %><br />
     <%= f.text_field :restphone %></div>

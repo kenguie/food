@@ -15,7 +15,14 @@
 
     <div class="posts_comments">
       <div id="postbox">
-        <h1><%= @post.user.fname %>'s Question from <%= @post.user.restname %> in <%= @post.user.restcity %>, <%= @post.user.reststate %></h1>
+        <h1><%= @post.user.fname %>'s Question from <%= @post.user.restname %> in <%= @post.user.restcity %>, 
+
+          <% if @post.user.reststate == "" %>
+            <%= @post.user.restcountry %>
+          <% else %>
+            <%= @post.user.reststate %>, <%= @post.user.restcountry %>
+          <% end %>
+        </h1>
 
         <p id="notice"><%= notice %></p>
 
@@ -26,7 +33,7 @@
             </span>
           <strong>Body:</strong>
             <span class="postStyle">
-              <%= @post.body %> 
+              <%= simple_format(@post.body) %> 
             </span>
         </p>
       </div>
@@ -37,9 +44,16 @@
     <% if comment.post.id == @post.id %>   
       <li class="commentShow"> <%= comment.title %> <br/>
       <%= simple_format(comment.body) %>
-      By <span class="expert"><%= comment.user.fname %></span> from <%= comment.user.restname %> in <%= comment.user.restcity %>, <%= comment.user.reststate %> 
+      By <span class="expert"><%= comment.user.fname %></span> from <%= comment.user.restname %> in <%= comment.user.restcity %>, 
+
+        <% if comment.user.reststate == "" %>
+          <%= comment.user.restcountry %>
+        <% else %>
+          <%= comment.user.reststate %>, <%= comment.user.restcountry %>
+        <% end %>
+        
         <% if comment.user.id == current_user.id %>
-            |  <span class="editComment"> <%= link_to 'Edit', edit_post_comment_path(comment.post.id, comment.id) %> </span><br/> </li> 
+            |  <span class="editComment"> <%= link_to 'Edit', edit_post_comment_path(comment.post.id, comment.id) %> | <%= link_to 'Delete', post_comment_path(comment.post.id, comment.id), method: :delete, data: {confirm: "Are you sure?"} %> </span> <br/> </li> 
         <% end %>
     <% else %>
 
