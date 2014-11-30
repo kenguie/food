@@ -169,8 +169,14 @@ body {
 /*------------- Update Form ---------------*/
 
 #cancel {
-	padding-top: 30px;
+	// padding-top: 30px;
 	clear: both;
+	border: 5px solid red;
+	border-style: double;
+	display: inline-block;
+	border-radius: 25px;
+	padding: 15px;
+	background-color: #FAFAD2
 }
 
 /*-------------- Biz Page (Show) -----------------*/
@@ -231,6 +237,7 @@ body {
 
 .editComment {
 	font-size: .8em;
+	display: none;
 }
 
 .editComment a {
@@ -261,6 +268,26 @@ body {
 
 .map {
 	height: 398px;
+}
+
+.mapIt {
+	margin-top: 10px;
+	text-align: center;
+	border: 1px solid black;
+	padding: 15px;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 1.2em;
+	background-color: rgba(100, 149, 237, 0.41);
+}
+
+.mapIt a {
+	text-decoration: none;
+	color: black;
+}
+
+.mapIt :hover {
+	color: rgba(250, 5, 5, 0.66);
 }
 
 .followSwitch {
@@ -465,3 +492,13 @@ input {
 
 }
 
+//------------------------ Small Phones max width 480px ----------------------//
+
+@media (max-width: 480px) {
+
+
+
+
+
+
+}

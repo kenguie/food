@@ -40,26 +40,35 @@
 
       <p> <strong> Comments: </strong> </p>
 
-  <% @post.comments.each do |comment| %>        
-    <% if comment.post.id == @post.id %>   
-      <li class="commentShow"> <%= comment.title %> <br/>
-      <%= simple_format(comment.body) %>
-      By <span class="expert"><%= comment.user.fname %></span> from <%= comment.user.restname %> in <%= comment.user.restcity %>, 
-
-        <% if comment.user.reststate == "" %>
-          <%= comment.user.restcountry %>
-        <% else %>
-          <%= comment.user.reststate %>, <%= comment.user.restcountry %>
-        <% end %>
+  <div class="commentArea">
+    <% @post.comments.each do |comment| %>        
+      <% if comment.post.id == @post.id %>   
+        <li class="commentShow"> <%= comment.title %> <br/>
+        <%= simple_format(comment.body) %>
+        By 
         
-        <% if comment.user.id == current_user.id %>
-            |  <span class="editComment"> <%= link_to 'Edit', edit_post_comment_path(comment.post.id, comment.id) %> | <%= link_to 'Delete', post_comment_path(comment.post.id, comment.id), method: :delete, data: {confirm: "Are you sure?"} %> </span> <br/> </li> 
-        <% end %>
-    <% else %>
+          <% if comment.user.expert %>
+            <span class="expert"><%= comment.user.fname %></span>
+          <% else %>
+            <span><%= comment.user.fname %></span>
+          <%end%>
 
-    <% end %>
-  <% end %>   
+        from <%= comment.user.restname %> in <%= comment.user.restcity %>, 
 
+          <% if comment.user.reststate == "" %>
+            <%= comment.user.restcountry %>
+          <% else %>
+            <%= comment.user.reststate %>, <%= comment.user.restcountry %>
+          <% end %>
+          
+          <% if comment.user.id == current_user.id %>
+            <span class="editComment"> | <%= link_to 'Edit', edit_post_comment_path(comment.post.id, comment.id) %> | <%= link_to 'Delete', post_comment_path(comment.post.id, comment.id), method: :delete, data: {confirm: "Are you sure?"} %> </span> <br/> </li> 
+          <% end %>
+      <% else %>
+
+      <% end %>
+    <% end %>   
+  </div>
 </div>
 
 <div class="follow_container">
@@ -106,6 +115,9 @@
     </div>
   </div>
 
+  <div class="mapIt">
+    <a href="https://www.google.com/maps/dir/<%=@post.user.reststreet%>, <%=@post.user.restcity%>, <%=@post.user.reststate%>, <%=@post.user.restzip%>, <%=@post.user.restcountry%>/current location"> Take me there! </a>
+  </div>
 </div>
 
   <div class="followSwitch">

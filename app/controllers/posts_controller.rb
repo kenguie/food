@@ -54,6 +54,7 @@ class PostsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@post.user) do |user, marker|
       marker.lat user.latitude
       marker.lng user.longitude
+      marker.infowindow user.restname
     end
   end
 

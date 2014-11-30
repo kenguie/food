@@ -19,16 +19,26 @@
 
 $(document).on('ready page:load', function () {
 
-/*--- Display About ---*/
+//*--- Display About ---*//
   $(".about").click(function(){
     $("#overlay").fadeIn(1000);
     $("#landingContainer").fadeOut(1000);
 	});
 
-/*--- Hide About ---*/
+//*--- Hide About ---*//
   $("a.close").click(function(){
   	$("#overlay").fadeOut(1000);
   	$("#landingContainer").fadeIn(1000);
   });
+
+//-------- Edit and Destroy on Show Page ------------//
+
+	$(".commentArea").mouseover(function(){
+		$(".editComment").fadeIn(500);
+	});
+
+	$(".commentArea").mouseleave(function(){
+		$(".editComment").fadeOut(500);
+	});
 
 });

@@ -28,7 +28,15 @@
           <% post.comments.each do |comment| %>
             
             <% if comment.post.id == post.id %>       
-              <li class="comment"> <%= comment.title %> | by <span class="expert"><%= comment.user.fname %></span> from <%= comment.user.restname %> in <%= comment.user.restcity %>, 
+              <li class="comment"> <%= comment.title %> | 
+
+              <% if comment.user.expert %>
+                <span class="expert"><%= comment.user.fname %></span>
+              <% else %>
+                <span><%= comment.user.fname %></span>
+              <%end%>
+
+              from <%= comment.user.restname %> in <%= comment.user.restcity %>, 
 
                 <% if comment.user.reststate == "" %>
                   <%= comment.user.restcountry %>
