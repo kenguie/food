@@ -218,7 +218,7 @@ body {
 
 .posts_comments {
 	margin-bottom: 30px;
-	background-color: whitesmoke;
+	background-color: aliceblue;
 	padding: 10px;
 	opacity: .8;
 	border: 1px solid black;
@@ -374,7 +374,7 @@ nav :hover {
 	border: solid 1px black;
 	border-radius: 5px;
 	display: inline-block;
-	background-color: whitesmoke;
+	background-color: aliceblue;
 	width: 100%;
 	margin-top: 25px;
 }
@@ -383,7 +383,7 @@ nav :hover {
 	border: solid 1px black;
 	border-radius: 5px;
 	display: inline-block;
-	background-color: whitesmoke;
+	background-color: aliceblue;
 	width: 100%;
 }
 	
@@ -497,7 +497,14 @@ input {
 		width: auto;
 	}
 
-	.s1{ width: 66.66%; }
+	.s1{ 
+		width: 66.66%; 
+		border: solid black 1px;
+		background-color: aliceblue;
+		margin-top: 25px;
+		border-radius: 5px;
+		padding: 10px;
+	}
 
 	.s2{ width: 33.33%; }
 

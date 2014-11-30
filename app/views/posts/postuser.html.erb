@@ -10,7 +10,16 @@
 <div class="section group">
   <div class="col s1">
 
-    <h1> Here are some more posts from <span class="expert"><%= @post.user.fname %></span>: </h1>
+    <h1> Here are some more posts from 
+
+      <% if @post.user.expert %>
+        <span class="expert"><%= @post.user.fname %></span>
+      <% else %>
+        <span><%= @post.user.fname %></span>
+      <%end%>
+
+      : </h1>
+      
     <p> Click on the post to see more of the conversation. </p>
 
     <ol class="listposts">

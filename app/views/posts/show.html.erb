@@ -31,7 +31,7 @@
             <span class="postStyle">
               <%= @post.title %> </p> 
             </span>
-          <strong>Body:</strong>
+          <strong>Question or Comment:</strong>
             <span class="postStyle">
               <%= simple_format(@post.body) %> 
             </span>
@@ -116,7 +116,7 @@
   </div>
 
   <div class="mapIt">
-    <a href="https://www.google.com/maps/dir/<%=@post.user.reststreet%>, <%=@post.user.restcity%>, <%=@post.user.reststate%>, <%=@post.user.restzip%>, <%=@post.user.restcountry%>/current location"> Take me there! </a>
+    <a target="_new" href="https://www.google.com/maps/dir/current location/<%= @post.user.address %>"> Take me there! </a>
   </div>
 </div>
 
