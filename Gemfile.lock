@@ -151,7 +151,6 @@ GEM
       daemon_controller (>= 1.2.0)
       rack
       rake (>= 0.8.1)
-    pg (0.17.1)
     polyamorous (1.1.0)
       activerecord (>= 3.0)
     pry (0.10.1)
@@ -267,7 +266,6 @@ DEPENDENCIES
   mandrill-api
   paperclip
   passenger
-  pg
   pry-rails
   quiet_assets
   rails (= 4.1.6)
