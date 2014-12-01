@@ -34,7 +34,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'quiet_assets', group: :development
 gem 'devise'
-gem 'activeadmin', github: 'activeadmin'
+#gem 'activeadmin', github: 'activeadmin'
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'paperclip'
