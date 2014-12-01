@@ -1,9 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'activeadmin'  
-gem 'ransack'
-gem 'inherited_resources'
-gem 'formtastic'
+gem 'activeadmin', github: 'gregbell/active_admin'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
