@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'activeadmin', github: 'gregbell/active_admin'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
@@ -35,14 +34,14 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'quiet_assets', group: :development
 gem 'devise'
-# gem 'activeadmin'#, github: 'activeadmin'
+gem 'activeadmin', github: 'activeadmin'
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'paperclip'
 gem 'friendly_id', "~> 5.0.1"
 gem 'mandrill-api'
 gem 'yelp'
-gem 'country_select'#, github: 'stefanpenner/country_select'
+gem 'country_select', github: 'stefanpenner/country_select'
 gem 'will_paginate', '~> 3.0'
 gem 'passenger'
 gem 'figaro'
