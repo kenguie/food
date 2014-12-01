@@ -3,10 +3,6 @@ class CommentsController < ApplicationController
 	before_action :set_comment, only: [:edit, :update, :destroy]
 	before_action :set_post, only: [:new, :create, :edit, :update, :destroy]
 
-	def index
-
-	end
-
 	def new
 		@comment = Comment.new
 	end
@@ -23,9 +19,10 @@ class CommentsController < ApplicationController
 		end
 	end
 
-	def show
+# index
+	# def show
 
-	end
+	# end
 
 	def edit
 

@@ -29,7 +29,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.all.paginate(page: params[:page], per_page: 8)
     if current_user.posts.first != nil 
       @post = current_user.posts.first.id
     end

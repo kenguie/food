@@ -42,7 +42,7 @@
 
   <div class="commentArea">
     <% @post.comments.each do |comment| %>        
-      <% if comment.post.id == @post.id %>   
+      <% if comment.post.id == @post.id %>  
         <li class="commentShow"> <%= comment.title %> <br/>
         <%= simple_format(comment.body) %>
         By 

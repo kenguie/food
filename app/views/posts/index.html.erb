@@ -5,10 +5,10 @@
 
       <h1 id="heading">History of Questions asked and Comments made</h1>
       <h3 id="expert">Any name in <span class="expert"> green </span> will be a name of an expert in our field.</h3>
-
+      <%= will_paginate @posts %>
       <ul>
         <% @posts.each do |post| %>
-        
+          <div id="postsection">
           <li class="post"> <span id="link"> <%= link_to post.title, post %>  </span> | 
             
           <% if post.user.expert %>
@@ -47,9 +47,11 @@
             <% else %>
 
             <% end %>
-          <% end %>   
+          <% end %>
+          </div>   
         <% end %>
       </ul>
+      <%= will_paginate @posts %>
     </div>
 
 

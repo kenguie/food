@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :posts do
-    resources :comments
+    resources :comments, except: [:index, :show]
     member do
       post 'follow'
       post 'unfollow'
