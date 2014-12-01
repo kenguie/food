@@ -329,6 +329,10 @@ nav :hover {
 	margin-bottom: 0;
 }
 
+#postsection {
+	border-bottom: 1px solid black;
+}
+
 #expert {
 	margin-top: 0;
 }
@@ -391,6 +395,22 @@ nav :hover {
 	padding: 20px;
 	width: 90%;
 }
+
+.pagination {
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	text-align: center;
+	display: inline-block;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: honeydew;
+
+  .previous_page { text-decoration: none; }
+  .previous_page.disabled { text-decoration: none;  }
+  .current { text-decoration: none; }
+  .next_page { text-decoration: none;  }
+  .next_page.disabled { text-decoration: none; }
+}
 	
 
 @import "post";
@@ -421,12 +441,12 @@ nav :hover {
 
 #comment_title {
 	border: 1px solid black;
-	width: 450px;
+	width: 750px;
 }
 
 #comment_body {
-	width: 500px;
-	height: 150px;
+	width: 800px;
+	height: 450px;
 	font-size: 1em;
 }
 
@@ -443,12 +463,12 @@ input {
 
 #post_title {
 	border: 1px solid black;
-	width: 450px;
+	width: 750px;
 }
 
 #post_body {
-	width: 500px;
-	height: 150px;
+	width: 800px;
+	height: 450px;
 	font-size: 1em;
 }
 
