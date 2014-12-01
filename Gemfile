@@ -41,6 +41,7 @@ gem 'yelp'
 gem 'country_select', github: 'stefanpenner/country_select'
 gem 'will_paginate', '~> 3.0'
 gem 'passenger'
+gem 'figaro'
 gem 'pry-rails', group: :development
 gem 'rspec-rails', '~> 3.0.0' 
 gem 'capybara'
