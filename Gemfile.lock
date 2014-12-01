@@ -261,7 +261,7 @@ DEPENDENCIES
   friendly_id (~> 5.0.1)
   geocoder
   gmaps4rails
-  jbuilder (~> 2.0)
+  jbuilder
   jquery-rails
   mandrill-api
   paperclip
