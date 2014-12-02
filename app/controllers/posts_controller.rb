@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_post, only: [:show, :edit, :update, :destroy, :follow, :unfollow] 
+  before_action :set_post, only: [:show, :edit, :update, :destroy] 
 
   def follow 
     @user = User.find(params[:id])
+    @post = @user
     @rel = Relationship.new(follower_id: current_user.id, followed_id: @user.id)
     if @rel.save
       UserMailer.followed_email(current_user, @post).deliver
@@ -17,6 +18,7 @@ class PostsController < ApplicationController
 
   def unfollow
     @user = User.find(params[:id])
+    @post = @user
     @rel = Relationship.where(follower_id: current_user.id, followed_id: @user.id).first
     if @rel && @rel.destroy 
       UserMailer.unfollowed_email(current_user, @post).deliver

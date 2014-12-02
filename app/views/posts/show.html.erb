@@ -77,9 +77,9 @@
     <ul>
       <% @post.user.followeds.each do |post| %>
         <% if post.expert %>
-          <li class="expert"><%= post.fname %></li>
+          <li class="expert"><%= post.fname %> of <%= post.restname %></li>
         <% else %>
-          <li><%= post.fname %></li>
+          <li><%= post.fname %> of <%= post.restname %></li>
         <% end %>
       <% end %>
     </ul>
@@ -90,9 +90,9 @@
     <ul>
       <% @post.user.followers.each do |post| %>
         <% if post.expert %>
-          <li class="expert"><%= post.fname %></li>
+          <li class="expert"><%= post.fname %> of <%= post.restname %></li>
         <% else %>
-          <li><%= post.fname %></li>
+          <li><%= post.fname %> of <%= post.restname %></li>
         <% end %>
       <% end %>
     </ul>

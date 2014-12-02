@@ -18,7 +18,7 @@ class UserMailer < ActionMailer::Base
   	@current_user = current_user
   	@post = post
     mail :subject => "You're being followed!",
-         :to      => @post.user.email,
+         :to      => @post.email,
          :from    => "no-reply@tweatonfood.com"
   end
 
@@ -26,7 +26,7 @@ class UserMailer < ActionMailer::Base
   	@current_user = current_user
   	@post = post
     mail :subject => "Someone has stopped following you.",
-         :to      => @post.user.email,
+         :to      => @post.email,
          :from    => "no-reply@tweatonfood.com"
   end
 
