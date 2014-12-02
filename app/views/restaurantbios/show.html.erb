@@ -1,12 +1,11 @@
 <div class="nav">
-  <%= link_to 'Post a Comment', new_post_comment_path(@post) %>  
   <%= link_to "More posts from " + @post.user.fname, post_postuser_path(@post) %> 
 
   <% if current_user.id == @post.user.id %>
-    <%= link_to 'Edit Your Post', edit_post_path(@post) %>  <%= link_to 'Delete Your Post', @post, method: :delete, data: { confirm: 'Are you sure?' } %>  <%= link_to 'Edit Your Information', edit_user_registration_path %>  
+    <%= link_to 'Edit Your Information', edit_user_registration_path %>  
   <% end %>
 
-  <%= link_to 'Back', posts_path %>   
+  <%= link_to 'Back', @post %>   
   <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
 </div>
 
@@ -15,7 +14,7 @@
 
     <div class="posts_comments">
       <div id="postbox">
-        <h1><%= @post.user.fname %>'s Question from <span id="link"><%= link_to @post.user.restname, post_restaurantbio_path(@post.id,@post.user.id) %></span> in <%= @post.user.restcity %>, 
+        <h1><%= @post.user.fname %> from <%= @post.user.restname %> in <%= @post.user.restcity %>, 
 
           <% if @post.user.reststate == "" %>
             <%= @post.user.restcountry %>
@@ -24,52 +23,25 @@
           <% end %>
         </h1>
 
-        <p id="notice"><%= notice %></p>
 
-        <p>
-          <strong>Title:</strong>
-            <span class="postStyle">
-              <%= @post.title %> </p> 
-            </span>
-          <strong>Question or Comment:</strong>
-            <span class="postStyle">
-              <%= simple_format(@post.body) %> 
-            </span>
-        </p>
-      </div>
+        <h1> Demographics </h1>
 
-      <p> <strong> Comments: </strong> </p>
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-  <div class="commentArea">
-    <% @post.comments.each do |comment| %>        
-      <% if comment.post.id == @post.id %>  
-        <li class="commentShow"> <%= comment.title %> <br/>
-        <%= simple_format(comment.body) %>
-        By 
-        
-          <% if comment.user.expert %>
-            <span class="expert"><%= comment.user.fname %></span>
-          <% else %>
-            <span><%= comment.user.fname %></span>
-          <%end%>
+        <h1> Challenges </h1>
 
-        from <%= comment.user.restname %> in <%= comment.user.restcity %>, 
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-          <% if comment.user.reststate == "" %>
-            <%= comment.user.restcountry %>
-          <% else %>
-            <%= comment.user.reststate %>, <%= comment.user.restcountry %>
-          <% end %>
-          
-          <% if comment.user.id == current_user.id %>
-            <span class="editComment"> | <%= link_to 'Edit', edit_post_comment_path(comment.post.id, comment.id) %> | <%= link_to 'Delete', post_comment_path(comment.post.id, comment.id), method: :delete, data: {confirm: "Are you sure?"} %> </span> <br/> </li> 
-          <% end %>
-      <% else %>
+        <h1> Menus & Dishes </h1>
 
-      <% end %>
-    <% end %>   
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+				<h1> Photos </h1>
+
+        <p> Lorem ipsum dolor sit amet.</p>
+
+      </div> 
   </div>
-</div>
 
 <div class="follow_container">
   <div class="follow">
