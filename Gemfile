@@ -5,10 +5,21 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.6'
 # Use sqlite3 as the database for Active Record
 
-	gem 'sqlite3'
+group :development, :test do 
+	gem 'spring'
+	gem 'rspec-rails', '~> 3.0.0'
+	gem 'database_cleaner'
+	gem 'quiet_assets'
+	gem 'pry-rails'
+	gem 'capybara'
+  gem 'sqlite3', '1.3.10' 
+end
 
-
-
+group :production do 
+	#turn on prostgresql to seed
+	gem 'pg' 
+	gem 'rails_12factor'
+end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -33,8 +44,6 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 #   gem "better_errors"
 # end
 
-gem 'spring',        group: :development
-gem 'quiet_assets', group: :development
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
 gem 'geocoder'
@@ -47,9 +56,6 @@ gem 'country_select', github: 'stefanpenner/country_select'
 gem 'will_paginate', '~> 3.0'
 gem 'passenger'
 gem 'figaro'
-gem 'pry-rails', group: :development
-gem 'rspec-rails', '~> 3.0.0' 
-gem 'capybara'
 gem 'newrelic_rpm'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
