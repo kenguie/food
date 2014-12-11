@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require underscore
 //= require gmaps/google
+//= require google_analytics
 //= require_tree .
 
 $(document).on('ready page:load', function () {
