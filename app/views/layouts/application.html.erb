@@ -10,9 +10,21 @@
 	<!-- Google Analytics Below -->
 		<!-- moved to shared/_footer -->
 	<!-- End Google Analytics -->
+
   <%= csrf_meta_tags %>
 </head>
 <body>
+			<!-- Mezzobit -->
+	<script async="1">
+		(function() {
+		  __mtm = [ '5489dcd5cd947fad4f28bd99', 'd36wtdrdo22bqa.cloudfront.net/mngr', 'tdi.mezzobit.com' ];
+		  var s = document.createElement('script');
+		  s.async = 1;
+		  s.src = '//' + __mtm[1] + '/mtm.js';
+		  var e = document.getElementsByTagName('script')[0];
+		  (e.parentNode || document.body).insertBefore(s, e);
+		})();
+	</script>
 
 <% if current_user %>
 	<p class="welcome"><img src="/assets/dot.png" alt="dot signifying signin"> You are signed in as <%= current_user.fname %> </p>
@@ -26,7 +38,7 @@
 <%= flash[:alert] if flash[:alert] %>
 <%= yield %>
 
-<%= render "shared/footer" %>
+<!-- render "shared/footer"  -->
 
 </body>
 </html>
