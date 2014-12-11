@@ -12,10 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require google_analytics
 //= require turbolinks
 //= require underscore
 //= require gmaps/google
-//= require google_analytics
 //= require_tree .
 
 $(document).on('ready page:load', function () {
